@@ -20,33 +20,33 @@ app.get("/about", function (req, res) {
   res.sendFile(path.join(__dirname, "..", "components", "about.htm"));
 });
 
-app.get("/uploadUser", function (req, res) {
+app.get("/uploadProduto", function (req, res) {
   res.sendFile(
-    path.join(__dirname, "..", "components", "user_upload_form.htm")
+    path.join(__dirname, "..", "components", "produto_upload_form.htm")
   );
 });
 
 app.post("/uploadSuccessful", urlencodedParser, async (req, res) => {
   try {
-    await sql`INSERT INTO Users (Id, Name, Email) VALUES (${req.body.user_id}, ${req.body.name}, ${req.body.email});`;
-    res.status(200).send("<h1>User added successfully</h1>");
+    await sql`INSERT INTO produtos (id, nome, preco) VALUES (${req.body.id_produto}, ${req.body.nome}, ${req.body.preco});`;
+    res.status(200).send("<h1>Produto added successfully</h1>");
   } catch (error) {
     console.error(error);
-    res.status(500).send("Error adding user");
+    res.status(500).send("Error adding produto");
   }
 });
 
-app.get("/allUsers", async (req, res) => {
+app.get("/allProdutos", async (req, res) => {
   try {
-    const users = await sql`SELECT * FROM Users;`;
-    if (users && users.rows.length > 0) {
-      let tableContent = users.rows
+    const produtos = await sql`SELECT * FROM produtos;`;
+    if (produtos && produtos.rows.length > 0) {
+      let tableContent = produtos.rows
         .map(
-          (user) =>
+          (produto) =>
             `<tr>
-                        <td>${user.id}</td>
-                        <td>${user.name}</td>
-                        <td>${user.email}</td>
+                        <td>${produto.id}</td>
+                        <td>${produto.nome}</td>
+                        <td>${produto.preco}</td>
                     </tr>`
         )
         .join("");
@@ -54,7 +54,7 @@ app.get("/allUsers", async (req, res) => {
       res.status(200).send(`
                 <html>
                     <head>
-                        <title>Users</title>
+                        <title>Produtos</title>
                         <style>
                             body {
                                 font-family: Arial, sans-serif;
@@ -84,9 +84,9 @@ app.get("/allUsers", async (req, res) => {
                         <table>
                             <thead>
                                 <tr>
-                                    <th>User ID</th>
-                                    <th>Name</th>
-                                    <th>Email</th>
+                                    <th>ID Produto</th>
+                                    <th>Nome</th>
+                                    <th>Preço</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -95,17 +95,17 @@ app.get("/allUsers", async (req, res) => {
                         </table>
                         <div>
                             <a href="/">Home</a>
-                            <a href="/uploadUser">Add User</a>
+                            <a href="/uploadProduto">Adicionar Produto</a>
                         </div>
                     </body>
                 </html>
             `);
     } else {
-      res.status(404).send("Users not found");
+      res.status(404).send("Produtos not found");
     }
   } catch (error) {
     console.error(error);
-    res.status(500).send("Error retrieving users");
+    res.status(500).send("Error retrieving produtos");
   }
 });
 
