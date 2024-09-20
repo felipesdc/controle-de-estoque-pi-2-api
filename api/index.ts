@@ -51,6 +51,7 @@ app.get("/allProdutos", async (req, res) => {
                         <td>${produto.id}</td>
                         <td>${produto.nome}</td>
                         <td>${produto.preco}</td>
+                        <td>${produto.quantidade}</td>
                     </tr>`
         )
         .join("");
@@ -91,6 +92,7 @@ app.get("/allProdutos", async (req, res) => {
                                     <th>ID Produto</th>
                                     <th>Nome</th>
                                     <th>Preço</th>
+                                    <th>Quantidade</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -147,7 +149,7 @@ app.put("/produtos/:id", async (req, res) => {
     const id = req.params.id;
     const client = await sql.connect();
     const databaseResponse =
-      await client.sql`UPDATE produtos SET nome=${req.body.nome}::text, preco=${req.body.preco}::numeric WHERE id=${id};`;
+      await client.sql`UPDATE produtos SET nome=${req.body.nome}::text, preco=${req.body.preco}::numeric, quantidade=${req.body.quantidade} WHERE id=${id};`;
     if (databaseResponse) {
       res.status(200).json(databaseResponse.rows);
       client.release();
@@ -165,7 +167,7 @@ app.post("/produtos", async (req, res) => {
   try {
     const client = await sql.connect();
     const databaseResponse =
-      await client.sql`INSERT INTO produtos (nome, preco) VALUES (${req.body.nome}::text, ${req.body.preco}::numeric);`;
+      await client.sql`INSERT INTO produtos (nome, preco, quantidade) VALUES (${req.body.nome}::text, ${req.body.preco}::numeric, ${req.body.quantidade}::integer);`;
     if (databaseResponse) {
       res.status(201).json(databaseResponse.rows);
       client.release();
