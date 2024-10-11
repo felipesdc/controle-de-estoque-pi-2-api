@@ -18,7 +18,7 @@ export const getUnidade = async (
   res: Response
 ): Promise<void> => {
   try {
-    const unidade = await getUnidadeById(Number(req.params.id));
+    const unidade = await getUnidadeById(Number(req.params.unidade_id));
     if (unidade) {
       res.json(unidade);
     } else {

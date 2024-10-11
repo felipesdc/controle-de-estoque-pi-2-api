@@ -21,7 +21,9 @@ export const getMovimentacaoEstoque = async (
   res: Response
 ): Promise<void> => {
   try {
-    const movimento = await getMovimentacaoEstoqueById(Number(req.params.id));
+    const movimento = await getMovimentacaoEstoqueById(
+      Number(req.params.movimento_id)
+    );
     if (movimento) {
       res.json(movimento);
     } else {

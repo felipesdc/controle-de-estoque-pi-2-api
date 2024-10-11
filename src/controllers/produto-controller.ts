@@ -18,7 +18,7 @@ export const getProduto = async (
   res: Response
 ): Promise<void> => {
   try {
-    const produto = await getProdutoById(Number(req.params.id));
+    const produto = await getProdutoById(Number(req.params.produto_id));
     if (produto) {
       res.json(produto);
     } else {

@@ -24,7 +24,7 @@ export const getCategoria = async (
   res: Response
 ): Promise<void> => {
   try {
-    const categoria = await getCategoriaById(Number(req.params.id));
+    const categoria = await getCategoriaById(Number(req.params.categoria_id));
     if (categoria) {
       res.json(categoria);
     } else {

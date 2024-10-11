@@ -20,7 +20,7 @@ export const getPrecos = async (req: Request, res: Response): Promise<void> => {
 // Consultar um preço específico
 export const getPreco = async (req: Request, res: Response): Promise<void> => {
   try {
-    const preco = await getPrecoById(Number(req.params.id));
+    const preco = await getPrecoById(Number(req.params.preco_id));
     if (preco) {
       res.json(preco);
     } else {

@@ -27,9 +27,7 @@ export const getPerfil = async (req: Request, res: Response): Promise<void> => {
       res.status(404).json({ message: "Perfil não encontrado" });
     }
   } catch (error) {
-    res
-      .status(500)
-      .json({ message: "Erro ao buscar perfil" + req.params.perfil_id });
+    res.status(500).json({ message: "Erro ao buscar perfil" });
   }
 };
 

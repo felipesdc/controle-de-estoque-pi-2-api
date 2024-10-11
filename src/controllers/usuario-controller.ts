@@ -26,7 +26,7 @@ export const getUsuario = async (
   res: Response
 ): Promise<void> => {
   try {
-    const usuario = await getUsuarioById(Number(req.params.id));
+    const usuario = await getUsuarioById(Number(req.params.usuario_id));
     if (usuario) {
       res.json(usuario);
     } else {
@@ -52,7 +52,7 @@ export const createNewUsuario = async (
       usuario_perfil_id,
       usuario_status,
     } = req.body;
-    const newPerfil = await createUsuario(
+    const newUsuario = await createUsuario(
       usuario_nome,
       usuario_email,
       usuario_password,
@@ -61,7 +61,7 @@ export const createNewUsuario = async (
       usuario_perfil_id,
       usuario_status
     );
-    res.status(201).json(newPerfil);
+    res.status(201).json(newUsuario);
   } catch (error) {
     res.status(500).json({ message: "Erro ao criar usuário" });
   }
@@ -83,7 +83,7 @@ export const updateExistingUsuario = async (
       usuario_perfil_id,
       usuario_status,
     } = req.body;
-    const updatedPerfil = await updateUsuario(
+    const updatedUsuario = await updateUsuario(
       usuario_id,
       usuario_nome,
       usuario_email,
@@ -93,8 +93,8 @@ export const updateExistingUsuario = async (
       usuario_perfil_id,
       usuario_status
     );
-    if (updatedPerfil) {
-      res.json(updatedPerfil);
+    if (updatedUsuario) {
+      res.json(updatedUsuario);
     } else {
       res.status(404).json({ message: "Usuário não encontrado" });
     }
