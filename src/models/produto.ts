@@ -13,11 +13,13 @@ export type Produto = {
   produto_estado: boolean;
 };
 
+// Consultar todos os produtos
 export const getAllProdutos = async (): Promise<Produto[]> => {
   const res = await pool.query("SELECT * FROM pi2_produtos");
   return res.rows;
 };
 
+// Consultar um produto específico
 export const getProdutoById = async (produto_id: number): Promise<Produto> => {
   const res = await pool.query(
     "SELECT * FROM pi2_produtos WHERE produto_id = $1",

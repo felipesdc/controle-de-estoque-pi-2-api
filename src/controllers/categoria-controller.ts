@@ -7,6 +7,7 @@ import {
   updateCategoria,
 } from "../models/categoria";
 
+// Consultar todas as categorias
 export const getCategorias = async (
   req: Request,
   res: Response
@@ -19,6 +20,7 @@ export const getCategorias = async (
   }
 };
 
+// Consultar uma categoria existente
 export const getCategoria = async (
   req: Request,
   res: Response

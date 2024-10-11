@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import { getAllProdutos, getProdutoById } from "../models/produto";
 
+// Consultar todos os produtos
 export const getProdutos = async (
   req: Request,
   res: Response
@@ -13,6 +14,7 @@ export const getProdutos = async (
   }
 };
 
+// Consultar um produto existente
 export const getProduto = async (
   req: Request,
   res: Response

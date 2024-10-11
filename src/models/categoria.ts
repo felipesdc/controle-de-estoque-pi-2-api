@@ -5,11 +5,13 @@ export type Categoria = {
   categoria_descricao: string;
 };
 
+// Consultar todas as categorias
 export const getAllCategorias = async (): Promise<Categoria[]> => {
   const res = await pool.query("SELECT * FROM pi2_categorias");
   return res.rows;
 };
 
+// Consultar uma categoria existente
 export const getCategoriaById = async (
   categoria_id: number
 ): Promise<Categoria> => {

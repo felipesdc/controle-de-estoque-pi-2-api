@@ -7,11 +7,13 @@ export type Fornecedor = {
   fornecedor_endereco: string;
 };
 
+// Consultar todos os forncedores
 export const getAllFornecedores = async (): Promise<Fornecedor[]> => {
   const res = await pool.query("SELECT * FROM pi2_fornecedores");
   return res.rows;
 };
 
+// Consultar um fornecedor específico
 export const getFornecedorById = async (
   fornecedor_id: number
 ): Promise<Fornecedor> => {

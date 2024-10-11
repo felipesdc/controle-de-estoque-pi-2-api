@@ -7,6 +7,7 @@ import {
   updateFornecedor,
 } from "../models/fornecedor";
 
+// Consultar todos os fornecedores
 export const getFornecedores = async (
   req: Request,
   res: Response
@@ -19,6 +20,7 @@ export const getFornecedores = async (
   }
 };
 
+// Consultar um fornecedor existente
 export const getFornecedor = async (
   req: Request,
   res: Response
@@ -45,12 +47,12 @@ export const createNewFornecedor = async (
   try {
     const { fornecedor_nome, fornecedor_contato, fornecedor_endereco } =
       req.body;
-    const newPreco = await createFornecedor(
+    const newFornecedor = await createFornecedor(
       fornecedor_nome,
       fornecedor_contato,
       fornecedor_endereco
     );
-    res.status(201).json(newPreco);
+    res.status(201).json(newFornecedor);
   } catch (error) {
     res.status(500).json({ message: "Erro ao criar preço" });
   }

@@ -4,6 +4,7 @@ import {
   getMovimentacaoEstoqueById,
 } from "../models/movimentacao-estoque";
 
+// Consultar todas as movimentações de estoque
 export const getMovimentacoesEstoque = async (
   req: Request,
   res: Response
@@ -16,6 +17,7 @@ export const getMovimentacoesEstoque = async (
   }
 };
 
+// Consultar movimentação de estoque existente
 export const getMovimentacaoEstoque = async (
   req: Request,
   res: Response

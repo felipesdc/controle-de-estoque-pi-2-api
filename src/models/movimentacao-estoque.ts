@@ -9,6 +9,7 @@ export type MovimentacaoEstoque = {
   movimento_observacao: string;
 };
 
+// Consultar todas as movimentações de estoque
 export const getAllMovimentacoesEstoque = async (): Promise<
   MovimentacaoEstoque[]
 > => {
@@ -16,6 +17,7 @@ export const getAllMovimentacoesEstoque = async (): Promise<
   return res.rows;
 };
 
+// Consultar uma movimentação de estoque específica
 export const getMovimentacaoEstoqueById = async (
   movimento_id: number
 ): Promise<MovimentacaoEstoque> => {
