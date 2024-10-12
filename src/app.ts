@@ -1,7 +1,6 @@
 import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
-import path from "path";
 
 import { setupSwagger } from "./config/swagger";
 
@@ -19,6 +18,8 @@ import estadoPedidoRoutes from "./routes/estado-pedido-routes";
 import historicoEstadoPedidoRoutes from "./routes/historico-estado-pedido-routes";
 
 const app = express();
+
+setupSwagger(app);
 
 // Create application/x-www-form-urlencoded parser
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
@@ -42,8 +43,6 @@ app.use("/api", pedidoRoutes);
 app.use("/api", itemPedidoRoutes);
 app.use("/api", estadoPedidoRoutes);
 app.use("/api", historicoEstadoPedidoRoutes);
-
-setupSwagger(app);
 
 // Rota raiz com template
 app.get("/", (req, res) => {
