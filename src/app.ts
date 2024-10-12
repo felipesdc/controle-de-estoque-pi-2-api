@@ -23,9 +23,6 @@ const app = express();
 // Create application/x-www-form-urlencoded parser
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
 
-app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "../src/views"));
-
 // Middlewares
 app.use(express.json());
 app.use(express.static("public"), cors());
