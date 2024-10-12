@@ -7,14 +7,14 @@ const swaggerOptions = {
   swaggerDefinition: {
     openapi: "3.0.0",
     info: {
-      title: "API de Sistema de Gestão de Estoques",
+      title: "API do Sistema de Gestão de Estoques",
       version: "1.0.0",
       description:
         "Documentação da API de Gestão de Estoques para uma hamburgueria",
     },
     servers: [
       {
-        url: "https://controle-de-estoque-pi-2-api.vercel.app/api",
+        url: "https://controle-de-estoque-pi-2-api.vercel.app/v1",
       },
     ],
     components: {

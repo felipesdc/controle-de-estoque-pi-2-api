@@ -27,7 +27,7 @@
  * /pedido/{pedido_id}:
  *   get:
  *     summary: Retorna um pedido específico pelo ID
- *     tags: [Pedidos]
+ *     tags: [Pedido]
  *     parameters:
  *       - in: path
  *         name: pedido_id
@@ -51,7 +51,7 @@
  * /pedido:
  *   post:
  *     summary: Cria um novo pedido
- *     tags: [Pedidos]
+ *     tags: [Pedido]
  *     requestBody:
  *       required: true
  *       content:
@@ -72,7 +72,7 @@
  * /pedido/{pedido_id}:
  *   put:
  *     summary: Atualiza um pedido existente
- *     tags: [Pedidos]
+ *     tags: [Pedido]
  *     parameters:
  *       - in: path
  *         name: pedido_id
@@ -102,7 +102,7 @@
  * /pedido/{pedido_id}:
  *   delete:
  *     summary: Deleta um pedido existente
- *     tags: [Pedidos]
+ *     tags: [Pedido]
  *     parameters:
  *       - in: path
  *         name: pedido_id

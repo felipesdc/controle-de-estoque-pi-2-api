@@ -31,18 +31,18 @@ app.use(urlencodedParser);
 app.use(bodyParser.json({ limit: "15mb" }));
 
 // Rotas
-app.use("/api", perfilRoutes);
-app.use("/api", usuarioRoutes);
-app.use("/api", precoRoutes);
-app.use("/api", fornecedorRoutes);
-app.use("/api", categoriaRoutes);
-app.use("/api", unidadeRoutes);
-app.use("/api", produtoRoutes);
-app.use("/api", movimentacaoEstoqueRoutes);
-app.use("/api", pedidoRoutes);
-app.use("/api", itemPedidoRoutes);
-app.use("/api", estadoPedidoRoutes);
-app.use("/api", historicoEstadoPedidoRoutes);
+app.use("/v1", perfilRoutes);
+app.use("/v1", usuarioRoutes);
+app.use("/v1", precoRoutes);
+app.use("/v1", fornecedorRoutes);
+app.use("/v1", categoriaRoutes);
+app.use("/v1", unidadeRoutes);
+app.use("/v1", produtoRoutes);
+app.use("/v1", movimentacaoEstoqueRoutes);
+app.use("/v1", pedidoRoutes);
+app.use("/v1", itemPedidoRoutes);
+app.use("/v1", estadoPedidoRoutes);
+app.use("/v1", historicoEstadoPedidoRoutes);
 
 // Rota raiz com template
 app.get("/", (req, res) => {
