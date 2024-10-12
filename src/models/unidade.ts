@@ -31,7 +31,7 @@ export const createUnidade = async (
   return res.rows[0];
 };
 
-// Atualizar uma unidade existente
+// Atualizar uma unidade específico
 export const updateUnidade = async (
   unidade_id: number,
   unidade_descricao: string

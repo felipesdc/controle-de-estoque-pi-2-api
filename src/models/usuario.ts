@@ -17,7 +17,7 @@ export const getAllUsuarios = async (): Promise<Usuario[]> => {
   return res.rows;
 };
 
-// Consultar usuário específico
+// Consultar um usuário específico
 export const getUsuarioById = async (usuario_id: number): Promise<Usuario> => {
   const res = await pool.query(
     "SELECT * FROM pi2_usuarios WHERE usuario_id = $1",
@@ -51,7 +51,7 @@ export const createUsuario = async (
   return res.rows[0];
 };
 
-// Atualizar um usuário existente
+// Atualizar um usuário específico
 export const updateUsuario = async (
   usuario_id: number,
   usuario_nome: string,

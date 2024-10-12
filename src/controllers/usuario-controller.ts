@@ -20,7 +20,7 @@ export const getUsuarios = async (
   }
 };
 
-// Consultar usuário específico
+// Consultar um usuário específico
 export const getUsuario = async (
   req: Request,
   res: Response
@@ -67,7 +67,7 @@ export const createNewUsuario = async (
   }
 };
 
-// Atualizar um usuário
+// Atualizar um usuário específico
 export const updateExistingUsuario = async (
   req: Request,
   res: Response
@@ -103,7 +103,7 @@ export const updateExistingUsuario = async (
   }
 };
 
-// Deletar um usuário
+// Deletar um usuário específico
 export const deleteExistingUsuario = async (
   req: Request,
   res: Response

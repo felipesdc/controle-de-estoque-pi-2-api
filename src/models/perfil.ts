@@ -11,7 +11,7 @@ export const getAllPerfis = async (): Promise<Perfil[]> => {
   return res.rows;
 };
 
-// Consultar perfil específico
+// Consultar um perfil específico
 export const getPerfilById = async (perfil_id: number): Promise<Perfil> => {
   const res = await pool.query(
     "SELECT * FROM pi2_perfis WHERE perfil_id = $1",
@@ -29,7 +29,7 @@ export const createPerfil = async (perfil_nome: string): Promise<Perfil> => {
   return res.rows[0];
 };
 
-// Atualizar um perfil existente
+// Atualizar um perfil específico
 export const updatePerfil = async (
   perfil_id: number,
   perfil_nome: string

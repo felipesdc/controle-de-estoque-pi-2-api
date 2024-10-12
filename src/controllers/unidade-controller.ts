@@ -20,7 +20,7 @@ export const getUnidades = async (
   }
 };
 
-// Consultar uma unidade existente
+// Consultar uma unidade específica
 export const getUnidade = async (
   req: Request,
   res: Response
@@ -51,7 +51,7 @@ export const createNewUnidade = async (
   }
 };
 
-// Atualizar uma unidade
+// Atualizar uma unidade específica
 export const updateExistingUnidade = async (
   req: Request,
   res: Response
@@ -70,7 +70,7 @@ export const updateExistingUnidade = async (
   }
 };
 
-// Deletar uma unidade
+// Deletar uma unidade específico
 export const deleteExistingUnidade = async (
   req: Request,
   res: Response

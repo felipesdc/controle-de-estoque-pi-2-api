@@ -51,7 +51,7 @@ export const createNewPreco = async (
   }
 };
 
-// Atualizar um preço
+// Atualizar um preço específico
 export const updateExistingPreco = async (
   req: Request,
   res: Response
@@ -77,7 +77,7 @@ export const updateExistingPreco = async (
   }
 };
 
-// Deletar um preço
+// Deletar um preço específico
 export const deleteExistingPreco = async (
   req: Request,
   res: Response

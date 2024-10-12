@@ -20,7 +20,7 @@ export const getCategorias = async (
   }
 };
 
-// Consultar uma categoria existente
+// Consultar uma categoria específica
 export const getCategoria = async (
   req: Request,
   res: Response
@@ -51,7 +51,7 @@ export const createNewCategoria = async (
   }
 };
 
-// Atualizar uma categoria
+// Atualizar uma categoria específica
 export const updateExistingCategoria = async (
   req: Request,
   res: Response
@@ -73,7 +73,7 @@ export const updateExistingCategoria = async (
   }
 };
 
-// Deletar uma categoria
+// Deletar uma categoria específico
 export const deleteExistingCategoria = async (
   req: Request,
   res: Response

@@ -17,7 +17,7 @@ export const getMovimentacoesEstoque = async (
   }
 };
 
-// Consultar movimentação de estoque existente
+// Consultar uma movimentação de estoque específica
 export const getMovimentacaoEstoque = async (
   req: Request,
   res: Response

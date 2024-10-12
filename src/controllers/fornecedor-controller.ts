@@ -20,7 +20,7 @@ export const getFornecedores = async (
   }
 };
 
-// Consultar um fornecedor existente
+// Consultar um fornecedor específico
 export const getFornecedor = async (
   req: Request,
   res: Response
@@ -54,11 +54,11 @@ export const createNewFornecedor = async (
     );
     res.status(201).json(newFornecedor);
   } catch (error) {
-    res.status(500).json({ message: "Erro ao criar preço" });
+    res.status(500).json({ message: "Erro ao criar fornecedor" });
   }
 };
 
-// Atualizar um fornecedor
+// Atualizar um fornecedor específico
 export const updateExistingFornecedor = async (
   req: Request,
   res: Response
@@ -83,7 +83,7 @@ export const updateExistingFornecedor = async (
   }
 };
 
-// Deletar um fornecedor
+// Deletar um fornecedor específico
 export const deleteExistingFornecedor = async (
   req: Request,
   res: Response

@@ -11,7 +11,7 @@ export const getAllCategorias = async (): Promise<Categoria[]> => {
   return res.rows;
 };
 
-// Consultar uma categoria existente
+// Consultar uma categoria específica
 export const getCategoriaById = async (
   categoria_id: number
 ): Promise<Categoria> => {
@@ -33,7 +33,7 @@ export const createCategoria = async (
   return res.rows[0];
 };
 
-// Atualizar uma categoria existente
+// Atualizar uma categoria específico
 export const updateCategoria = async (
   categoria_id: number,
   categoria_descricao: string

@@ -17,7 +17,7 @@ export const getPerfis = async (req: Request, res: Response): Promise<void> => {
   }
 };
 
-// Consultar um perfil existente
+// Consultar um perfil específico
 export const getPerfil = async (req: Request, res: Response): Promise<void> => {
   try {
     const perfil = await getPerfilById(Number(req.params.perfil_id));
@@ -45,7 +45,7 @@ export const createNewPerfil = async (
   }
 };
 
-// Atualizar um perfil
+// Atualizar um perfil específico
 export const updateExistingPerfil = async (
   req: Request,
   res: Response
@@ -64,7 +64,7 @@ export const updateExistingPerfil = async (
   }
 };
 
-// Deletar um perfil
+// Deletar um perfil específico
 export const deleteExistingPerfil = async (
   req: Request,
   res: Response

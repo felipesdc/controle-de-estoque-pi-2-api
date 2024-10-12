@@ -37,7 +37,7 @@ export const createFornecedor = async (
   return res.rows[0];
 };
 
-// Atualizar um fornecedor existente
+// Atualizar um fornecedor específico
 export const updateFornecedor = async (
   fornecedor_id: number,
   fornecedor_nome: string,

@@ -14,7 +14,7 @@ export const getAllPrecos = async (): Promise<Preco[]> => {
   return res.rows;
 };
 
-// Consultar preço específico
+// Consultar um preço específico
 export const getPrecoById = async (preco_id: number): Promise<Preco> => {
   const res = await pool.query("SELECT * FROM pi2_precos WHERE preco_id = $1", [
     preco_id,
@@ -36,7 +36,7 @@ export const createPreco = async (
   return res.rows[0];
 };
 
-// Atualizar um preço existente
+// Atualizar um preço específico
 export const updatePreco = async (
   preco_id: number,
   preco_compra: string,
