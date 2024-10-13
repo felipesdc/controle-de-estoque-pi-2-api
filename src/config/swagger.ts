@@ -1,6 +1,7 @@
 import swaggerJsDoc from "swagger-jsdoc";
 import swaggerUi from "swagger-ui-express";
 import { Express } from "express";
+import swaggerDocument from "../swagger.json";
 import pedidoSchema from "../schemas/pedido-schema";
 
 const env = process.env.NODE_ENV || "development";
@@ -29,7 +30,7 @@ const swaggerOptions = {
       },
     },
   },
-  apis: env === "production" ? ["./dist/**/*.js"] : ["./src/**/*.ts"], // Diferentes caminhos para produção e desenvolvimento
+  apis: env === "production" ? ["./dist/routes/*.js"] : ["./src/routes/*.ts"], // Diferentes caminhos para produção e desenvolvimento
 };
 
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
@@ -38,7 +39,7 @@ export const setupSwagger = (app: Express) => {
   app.use(
     "/api-docs",
     swaggerUi.serve,
-    swaggerUi.setup(swaggerDocs, {
+    swaggerUi.setup(swaggerDocument, {
       customCss:
         ".swagger-ui .opblock .opblock-summary-path-description-wrapper { align-items: center; display: flex; flex-wrap: wrap; gap: 0 10px; padding: 0 10px; width: 100%; }",
       customCssUrl: CSS_URL,

@@ -1,0 +1,58 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API do Sistema de Gestão de Estoques",
+    "version": "1.0.0",
+    "description": "Documentação da API de Gestão de Estoques para uma hamburgueria"
+  },
+  "servers": [
+    {
+      "url": "https://controle-de-estoque-pi-2-api.vercel.app/v1"
+    }
+  ],
+  "paths": {
+    "/produto": {
+      "get": {
+        "summary": "Consultar todos os produtos",
+        "responses": {
+          "200": {
+            "description": "Lista de produtos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/Produto" }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Criar novo produto",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/Produto" }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Produto criado com sucesso" }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Produto": {
+        "type": "object",
+        "properties": {
+          "produto_id": { "type": "integer" },
+          "produto_descricao": { "type": "string" },
+          "produto_preco": { "type": "number" }
+        }
+      }
+    }
+  }
+}
