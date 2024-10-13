@@ -1,7 +1,7 @@
 /**
  * @swagger
  * tags:
- *   name: Pedidos
+ *   name: Pedido
  *   description: Rotas relacionadas aos pedidos
  */
 
@@ -10,7 +10,7 @@
  * /pedido:
  *   get:
  *     summary: Retorna todos os pedidos
- *     tags: [Pedidos]
+ *     tags: [Pedido]
  *     responses:
  *       200:
  *         description: Lista de pedidos.

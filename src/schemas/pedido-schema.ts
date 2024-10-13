@@ -27,7 +27,7 @@
  *           description: ID do usuário que fez o pedido
  *         pedido_estado_id:
  *           type: integer
- *           description: ID do estado atual do pedido (Ex.: pendente, entregue)
+ *           description: ID do estado atual do pedido (Ex. pendente, entregue)
  *         pedido_observacao:
  *           type: string
  *           description: Observações adicionais sobre o pedido

@@ -3,6 +3,8 @@ import swaggerUi from "swagger-ui-express";
 import { Express } from "express";
 import pedidoSchema from "../schemas/pedido-schema";
 
+const env = process.env.NODE_ENV || "development";
+
 // CDN CSS
 const CSS_URL =
   "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui.min.css";
@@ -27,7 +29,7 @@ const swaggerOptions = {
       },
     },
   },
-  apis: ["./src/routes/*.ts"], // Caminho para os arquivos de rotas
+  apis: env === "production" ? ["./dist/**/*.js"] : ["./src/**/*.ts"], // Diferentes caminhos para produção e desenvolvimento
 };
 
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
