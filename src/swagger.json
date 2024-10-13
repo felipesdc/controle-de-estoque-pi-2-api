@@ -3,7 +3,7 @@
   "info": {
     "title": "API do Sistema de Gestão de Estoques",
     "version": "1.0.0",
-    "description": "Documentação da API de Gestão de Estoques para uma hamburgueria"
+    "description": "Documentação da API de Gestão de Estoques"
   },
   "servers": [
     {
