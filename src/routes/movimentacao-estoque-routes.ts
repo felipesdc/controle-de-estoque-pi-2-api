@@ -9,10 +9,16 @@ import {
 
 const router = Router();
 
-router.get("/movimento", getMovimentacoesEstoque); // Consultar todas as movimentações de estoque
-router.get("/movimento/:movimento_id", getMovimentacaoEstoque); // Consultar movimentação de estoque por ID
-router.post("/movimento", createNewMovimentacaoEstoque); // Criar nova movimentação de estoque
-router.put("/movimento/:movimento_id", updateExistingMovimentacaoEstoque); // Atualizar movimentação de estoque por ID
-router.delete("/movimento/:movimento_id", deleteExistingMovimentacaoEstoque); // Deletar movimentação de estoque por ID
+router.get("/movimentacao-estoque", getMovimentacoesEstoque); // Consultar todas as movimentações de estoque
+router.get("/movimentacao-estoque/:movimento_id", getMovimentacaoEstoque); // Consultar movimentação de estoque por ID
+router.post("/movimentacao-estoque", createNewMovimentacaoEstoque); // Criar nova movimentação de estoque
+router.put(
+  "/movimentacao-estoque/:movimento_id",
+  updateExistingMovimentacaoEstoque
+); // Atualizar movimentação de estoque por ID
+router.delete(
+  "/movimentacao-estoque/:movimento_id",
+  deleteExistingMovimentacaoEstoque
+); // Deletar movimentação de estoque por ID
 
 export default router;

@@ -1265,7 +1265,7 @@
         }
       }
     },
-    "/movimento": {
+    "/movimentacao-estoque": {
       "get": {
         "summary": "Consultar todas as movimentações de estoque",
         "tags": ["Movimentação de Estoque"],
@@ -1316,7 +1316,7 @@
         }
       }
     },
-    "/movimento/{movimento_id}": {
+    "/movimentacao-estoque/{movimento_id}": {
       "get": {
         "summary": "Consultar uma movimentação de estoque específica",
         "tags": ["Movimentação de Estoque"],
