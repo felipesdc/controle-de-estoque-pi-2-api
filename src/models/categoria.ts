@@ -26,8 +26,9 @@ export const getCategoriaById = async (
 export const createCategoria = async (
   categoria_descricao: string
 ): Promise<Categoria> => {
+  console.log(categoria_descricao);
   const res = await pool.query(
-    "INSERT INTO pi2_categoria (categoria_descricao) VALUES ($1) RETURNING *",
+    "INSERT INTO pi2_categorias (categoria_descricao) VALUES ($1) RETURNING *",
     [categoria_descricao]
   );
   return res.rows[0];
