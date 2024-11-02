@@ -7,7 +7,7 @@ import { setupSwagger } from "./config/swagger";
 import perfilRoutes from "./routes/perfil-routes";
 import usuarioRoutes from "./routes/usuario-routes";
 import precoRoutes from "./routes/preco-routes";
-import fornecedorRoutes from "./routes/preco-routes";
+import fornecedorRoutes from "./routes/fornecedor-routes";
 import categoriaRoutes from "./routes/categoria-routes";
 import unidadeRoutes from "./routes/unidade-routes";
 import produtoRoutes from "./routes/produto-routes";
