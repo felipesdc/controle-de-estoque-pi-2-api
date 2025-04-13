@@ -1,4 +1,6 @@
 import { Request, Response } from "express";
+import jwt from "jsonwebtoken";
+import bcrypt from "bcryptjs";
 import {
   createUsuario,
   deleteUsuario,
@@ -55,7 +57,7 @@ export const createNewUsuario = async (
     const newUsuario = await createUsuario(
       usuario_nome,
       usuario_email,
-      usuario_password,
+      bcrypt.hashSync(usuario_password, 8),
       usuario_nome_completo,
       usuario_inscricao,
       usuario_perfil_id,
@@ -87,7 +89,7 @@ export const updateExistingUsuario = async (
       usuario_id,
       usuario_nome,
       usuario_email,
-      usuario_password,
+      bcrypt.hashSync(usuario_password, 8),
       usuario_nome_completo,
       usuario_inscricao,
       usuario_perfil_id,
@@ -114,5 +116,39 @@ export const deleteExistingUsuario = async (
     res.status(204).send();
   } catch (error) {
     res.status(500).json({ message: "Erro ao deletar usuário" });
+  }
+};
+
+export const authenticateUsuario = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
+  const { usuario_email, usuario_password } = req.body;
+
+  try {
+    const usuarios = await getAllUsuarios();
+    const usuario = usuarios.find((u) => u.usuario_email === usuario_email);
+    if (!usuario) {
+      res.status(401).json({ message: "Usuário não encontrado" });
+    } else {
+      const isPasswordValid = await bcrypt.compare(
+        usuario_password,
+        usuario.usuario_password
+      );
+
+      if (!isPasswordValid) res.status(401).json({ message: "Senha inválida" });
+
+      const token = jwt.sign(
+        { id: usuario.usuario_id },
+        process.env.JWT_SECRET || "secreto",
+        {
+          expiresIn: "1h",
+        }
+      );
+
+      res.json({ token });
+    }
+  } catch (error) {
+    res.status(500).json({ message: "Erro ao buscar usuários" });
   }
 };
