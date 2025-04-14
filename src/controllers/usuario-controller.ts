@@ -123,11 +123,14 @@ export const authenticateUsuario = async (
   req: Request,
   res: Response
 ): Promise<void> => {
-  const { usuario_email, usuario_password } = req.body;
+  const { usuario_login, usuario_password } = req.body;
 
   try {
     const usuarios = await getAllUsuarios();
-    const usuario = usuarios.find((u) => u.usuario_email === usuario_email);
+    const usuario = usuarios.find(
+      (u) =>
+        u.usuario_email === usuario_login || u.usuario_nome === usuario_login
+    );
     if (!usuario) {
       res.status(401).json({ message: "Usuário não encontrado" });
     } else {
