@@ -142,10 +142,13 @@ export const authenticateUsuario = async (
       if (!isPasswordValid) res.status(401).json({ message: "Senha inválida" });
 
       const token = jwt.sign(
-        { id: usuario.usuario_id },
+        {
+          usuario_id: usuario.usuario_id,
+          usuario_perfil_id: usuario.usuario_perfil_id,
+        },
         process.env.JWT_SECRET || "secreto",
         {
-          expiresIn: "1h",
+          expiresIn: "2h",
         }
       );
 
