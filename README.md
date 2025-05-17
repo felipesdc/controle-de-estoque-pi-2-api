@@ -1,33 +1,6 @@
-# Express.js on Vercel
+Controle de estoque - API Express em Typescript que fornece para front-end Angular 18 [https://github.com/felipesdc/controle-de-estoque-pi-2] desenvolvida para a disciplina Projeto Integrador dos cursos:
 
-Simple Express.js + Vercel example that uses Vercel Postgres to add and display users in a table.
+- Projeto Integrador II - Turma 04 - DRP14-PJI240-SALA-004GRUPO-020
+- Projeto Integrador III - Turma 03 - DRP14-PJI310-SALA-003GRUPO-021
 
-## How to Use
-
-BE sure to create a Vercel Postgres database and add you environment variables to your `.env` file. You can find an example of the `.env` file in the `.env.example` file.
-
-You can choose from one of the following two methods to use this repository:
-
-### One-Click Deploy
-
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=vercel-examples):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/examples/tree/main/solutions/express&project-name=express&repository-name=express)
-
-### Clone and Deploy
-
-```bash
-git clone https://github.com/vercel/examples/tree/main/solutions/express
-```
-
-Install the Vercel CLI:
-
-```bash
-npm i -g vercel
-```
-
-Then run the app at the root of the repository:
-
-```bash
-vercel dev
-```
+Projeto inspirado no repositório `https://github.com/MarceloNolasco/Controle-de-estoque`
